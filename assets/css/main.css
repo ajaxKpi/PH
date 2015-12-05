@@ -4050,3 +4050,24 @@
 .liquid_form{
     visibility: hidden;
 }
+.Thnx{
+
+    height: 100%;
+    position: absolute;
+    display: none;
+
+}
+.Thnx button{
+    background-color: #ffffff;
+    color: #e44c65 !important;
+    width: 25%;
+    height: 30px;
+    font-size: 1.2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Thnx button:hover{
+    background-color: #e44c65;
+    color:#ffffff !important;
+}

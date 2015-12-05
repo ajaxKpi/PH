@@ -22,10 +22,15 @@
         window.open("http://www.p3php.in",'_blank');
     });
 
-*/var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+*/
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
 
-    if (isChrome) alert("You are using Chrome!");
+    if (isChrome){
+        chrome.tabs.create({
+            url: "https://www.safaribooksonline.com/library/view/programming-chrome-apps/9781491905272/ch01.html"
+        });
+    }
     if (isSafari) alert("You are using Safari!");
     document.getElementById("test").onclick = function(){
         window.open("http://www.google.com",'_blank');

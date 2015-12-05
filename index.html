@@ -142,7 +142,12 @@
 							<h2>Для записи на тренинг заполните форму ниже:</h2>
 							<p>Стоимость тренинга до 20 ноября составляет 290 грн,<br /> после 20 ноября 350 грн,<br /> в день тренинга 500 грн</p>
 						</header>
-						<form class="container 50%" action="http://formspree.io/ky1v.ph@gmail.com" target="_blank" method="POST">
+                        <div class="Thnx">
+                            <img src="images/thanks.JPG" alt="tnx"/>
+                            <button class="Form_close">Close</button>
+                        </div>
+
+                        <form class="container 50%" >
 
 								<div class ="option_radio">
 									<input type="radio"  name="pay_type" id = "350UAH" class="rb_pay" value="yearly bird" style="float:none;display: inline-block;margin-right: 0;">оплата 350 грн
@@ -160,16 +165,18 @@
 							</div>
 						</form>
 					</div>
-                    <form method="POST" action="https://www.liqpay.com/api/checkout" class="liquid_form"
-                          accept-charset="utf-8" target="_blank">
-                        <input type="hidden" name="data"  value="=="/>
-                        <input type="hidden" name="signature"  value="="/>
-                        <input type="submit" name="LiquidCall">
-                    </form>
 
-				</section>
+                    <!--
+                        <form method="POST" action="https://www.liqpay.com/api/checkout" class="liquid_form"
+                              accept-charset="utf-8" target="_blank">
+                            <input type="hidden" name="data"  value="=="/>
+                            <input type="hidden" name="signature"  value="="/>
+                            <input type="submit" name="LiquidCall">
+                        </form>
+                     -->
+                    </section>
 
-			<!-- Footer -->
+                <!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
@@ -195,6 +202,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
 
 	</body>
 </html>

@@ -337,11 +337,25 @@ $( ".rb_pay" ).change(function() {
 	}
   
 });
-
+    $(".Thnx").css("width",window.outerWidth+"px")
+    $(".Thnx").css("heigth",window.outerHeight+"px")
 $("#Make_subscribe").click(function(){
     //check if all fields are ok
     if ($("#name").val()!=="" && $("#phone").val()!==""&&validateEmail($("#email").val())) {
 
+
+        $.ajax({
+            url: "//formspree.io/ajax90@ukr.net",
+            method: "POST",
+            data: {Payment: Curr_mode,
+                Name: $("input[type='text'][name='name']").val(),
+                Email: $("input[type='email'][name='email']").val(),
+                Phone: $("input[type='tel'][name='phone']").val()},
+            dataType: "json"
+        });
+
+        $(".Thnx").css("display","block");
+        $("body").css("opacity","0.7");
 
       /*  $.ajax({
             url: 'functions/payment.php',
@@ -367,16 +381,33 @@ $("#Make_subscribe").click(function(){
                 alert("server restrictions")
             }
         }),*/
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+        if (isChrome){
 
+
+
+
+        }
+        else if(isOpera){
+
+        }
+        else{
             window.open(Curr_link,'_blank')
-    
+        }
 
     }
-
+        return false
 }
 
 )
 
+$(".Form_close").click(function(){
+        $(".Thnx").css("display","none")
+        //$("input[type='submit'][name='LiquidCall']").click()
+        window.open(Curr_link,'_blank')
+    $("body").css("opacity","1");
+})
 
 })(jQuery);
 function validateEmail(email) {
