@@ -307,6 +307,7 @@
 
    ///*************************** Addition by IZV ***************************
     Curr_mode = "350h"
+    Curr_link="https://www.liqpay.com/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTcwNjA5ODI2MDU5IiwiYW1vdW50IjoiMzUwIiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCe0L%2FQu9Cw0YLQsCDRgtGA0LXQvdGW0L3Qs9GDIiwidHlwZSI6ImJ1eSIsImxhbmd1YWdlIjoicnUiLCJwYXlfd2F5IjoiY2FyZCxsaXFwYXksZGVsYXllZCxpbnZvaWNlLHByaXZhdDI0In0%3D&signature=X9Vc%2FLv3z20hAisB5qSQclIQZIA%3D";
 	if ($('#350UAH').attr("checked", "checked")){
 		$('#payment_inField').val("350UAH")
 	}
@@ -322,14 +323,17 @@ $( ".rb_pay" ).change(function() {
 	if ($("#350UAH").is(":checked")){
 		$('#payment_inField').val("350UAH")
         Curr_mode = "350h"
+        Curr_link = "https://www.liqpay.com/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTcwNjA5ODI2MDU5IiwiYW1vdW50IjoiMzUwIiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCe0L%2FQu9Cw0YLQsCDRgtGA0LXQvdGW0L3Qs9GDIiwidHlwZSI6ImJ1eSIsImxhbmd1YWdlIjoicnUiLCJwYXlfd2F5IjoiY2FyZCxsaXFwYXksZGVsYXllZCxpbnZvaWNlLHByaXZhdDI0In0%3D&signature=X9Vc%2FLv3z20hAisB5qSQclIQZIA%3D"
 	}
 	else if($("#500UAH").is(":checked")){
 		$('#payment_inField').val("500UAH")
         Curr_mode = "500h"
+        Curr_link = "https://www.liqpay.com/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTcwNjA5ODI2MDU5IiwiYW1vdW50IjoiNTAwIiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCe0L%2FQu9Cw0YLQsCDRgtGA0LXQvdGW0L3Qs9GDIiwidHlwZSI6ImJ1eSIsImxhbmd1YWdlIjoicnUiLCJwYXlfd2F5IjoiY2FyZCxsaXFwYXksZGVsYXllZCxpbnZvaWNlLHByaXZhdDI0In0%3D&signature=fXZqz8fwDOiZv1txSpGMA6IEXa0%3D"
 	}
 	else if($('#100UAH').attr("checked", "checked")){
 		$('#payment_inField').val("100UAH")
         Curr_mode = "100h"
+        Curr_link = "https://www.liqpay.com/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTcwNjA5ODI2MDU5IiwiYW1vdW50IjoiMTAwIiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCf0LXRgNC10LTQvtC%2F0LvQsNGC0LAg0LfQsCDRgtGA0LXQvdGW0L3QsyIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1IiwicGF5X3dheSI6ImNhcmQsbGlxcGF5LGRlbGF5ZWQsaW52b2ljZSxwcml2YXQyNCJ9&signature=Gv3NswmzmezBIC%2F3Yhq%2BrP70syQ%3D"
 	}
   
 });
@@ -338,7 +342,8 @@ $("#Make_subscribe").click(function(){
     //check if all fields are ok
     if ($("#name").val()!=="" && $("#phone").val()!==""&&validateEmail($("#email").val())) {
 
-        $.ajax({
+
+      /*  $.ajax({
             url: 'functions/payment.php',
             type: 'POST',
             data: ({'Mode': Curr_mode}),
@@ -351,13 +356,20 @@ $("#Make_subscribe").click(function(){
                 $("input[type='hidden'][name='data']").val(pay_data)
                 $("input[type='hidden'][name='signature']").val(pay_signat)
 
-                $("input[type='submit'][name='LiquidCall']").click()
+                //$("input[type='submit'][name='LiquidCall']").click()
+
+               // liqpay_link = "https://www.liqpay.com/api/3/checkout?"+"data="+encodeURIComponent(pay_data)+"&signature="+encodeURIComponent(pay_signat);
+
+
             },
             error: function() {
+                liqpay_link = "#";
                 alert("server restrictions")
             }
-        })
+        }),*/
 
+            window.open(Curr_link,'_blank')
+    
 
     }
 
