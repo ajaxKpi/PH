@@ -2459,6 +2459,7 @@
 		display: inline-block;
 		position: relative;
 		overflow: hidden;
+        z-index: 99;
 		width: 9.25%;
 	}
 
@@ -4043,6 +4044,7 @@
 
 }
 */
+
 .telep img{
 
     width: 10%;
@@ -4070,4 +4072,7 @@
 .Thnx button:hover{
     background-color: #e44c65;
     color:#ffffff !important;
+}
+#banner:before{
+    height: 0vh;
 }

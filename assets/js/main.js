@@ -345,7 +345,7 @@ $("#Make_subscribe").click(function(){
 
 
         $.ajax({
-            url: "//formspree.io/ajax90@ukr.net",
+            url: "//formspree.io/kyiv.ph@gmail.com",
             method: "POST",
             data: {Payment: Curr_mode,
                 Name: $("input[type='text'][name='name']").val(),
@@ -393,7 +393,7 @@ $("#Make_subscribe").click(function(){
 
         }
         else{
-            window.open(Curr_link,'_blank')
+            //window.open(Curr_link,'_blank')
         }
 
     }
